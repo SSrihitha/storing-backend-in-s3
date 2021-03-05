@@ -21,3 +21,11 @@ resource "aws_subnet" "subnet2" {
         name = "subnet2"
     }
 }
+
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.vpc.id
+
+  tags = {
+    Name = "my_igw"
+  }
+}
